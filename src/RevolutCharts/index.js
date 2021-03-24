@@ -6,8 +6,10 @@ import {
   Dimensions,
   Animated,
   TextInput,
+  Text,
 } from 'react-native';
-import { Svg } from 'expo';
+// import { Svg } from 'expo';
+import * as Svg from 'react-native-svg';
 import * as path from 'svg-path-properties';
 import * as shape from 'd3-shape';
 
