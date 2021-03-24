@@ -1,14 +1,10 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Initial from './src/Initial';
-import RevolutCharts from './src/RevolutCharts';
 
-export default function App() {
+export default function Initial() {
   return (
     <View style={styles.container}>
-      <RevolutCharts />
-      <StatusBar style='auto' />
+      <Text>Open up Initial.js to start working on your app!</Text>
     </View>
   );
 }
@@ -16,5 +12,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
