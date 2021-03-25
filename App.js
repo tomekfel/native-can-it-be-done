@@ -3,11 +3,12 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Initial from './src/Initial';
 import RevolutCharts from './src/RevolutCharts';
+import FacebookMarketplace from './src/FacebookMarketplace';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <RevolutCharts />
+      <FacebookMarketplace />
       <StatusBar style='auto' />
     </View>
   );
