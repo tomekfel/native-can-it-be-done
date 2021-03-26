@@ -4,11 +4,12 @@ import { StyleSheet, Text, View } from 'react-native';
 import Initial from './src/Initial';
 import RevolutCharts from './src/RevolutCharts';
 import FacebookMarketplace from './src/FacebookMarketplace';
+import FlatListAnimated from './src/FlatListAnimated';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <FacebookMarketplace />
+      <FlatListAnimated />
       <StatusBar style='auto' />
     </View>
   );
