@@ -4,18 +4,20 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { SharedElement } from 'react-navigation-shared-element';
 
 // import Button from './Button';
-// import Icon from './Icon';
+import Icon from './Icon';
+
+const SPACING = 15;
 
 export default DetailScreen = ({ route, navigation }) => {
-  const SPACING = 15;
   const { post } = route.params;
   const safeInsets = useSafeAreaInsets();
   const opacity = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     Animated.timing(opacity, {
+      fromValue: 0.5,
       toValue: 1,
-      duration: 250,
+      duration: 150,
       delay: 500,
       useNativeDriver: true,
     }).start();
@@ -36,19 +38,19 @@ export default DetailScreen = ({ route, navigation }) => {
         }}
       >
         <Icon name='x' onPress={() => navigation.goBack()} />
-        <Icon name='more-horizontal' />
+        {/* <Icon name='more-horizontal' /> */}
       </Animated.View>
 
-      <SharedElement id={post.id}>
-        <Image source={post.image} style={styles.postImage} />
+      <SharedElement id={post.imdb_link}>
+        <Image source={{ uri: post.imdb_image_url }} style={styles.postImage} />
       </SharedElement>
 
       <View style={styles.postDetails}>
-        <Text style={styles.postTitle}>{post.title}</Text>
+        <Text style={styles.postTitle}>{post.imdb_title}</Text>
 
-        <Text style={styles.postPrice}>€{post.price}</Text>
+        <Text style={styles.postPrice}>€{post.imdb_user_rating}</Text>
 
-        <Button title='Contact Seller' style={styles.postContactButton} />
+        {/* <Button title='Contact Seller' style={styles.postContactButton} /> */}
 
         <Animated.Text
           style={{
@@ -56,7 +58,7 @@ export default DetailScreen = ({ route, navigation }) => {
             fontSize: 17,
           }}
         >
-          {post.description}
+          {post.imdb_description}
         </Animated.Text>
       </View>
     </View>
@@ -89,7 +91,7 @@ const styles = StyleSheet.create({
   // },
   postImage: {
     height: 300,
-    width: '100%',
+    // width: '100%',
   },
   postDetails: {
     paddingVertical: 10,

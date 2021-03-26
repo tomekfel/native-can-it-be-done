@@ -16,7 +16,7 @@ export class MainScreen extends Component {
           name='Detail'
           component={DetailScreen}
           sharedElements={(route) => {
-            return [route.params.post.id];
+            return [route.params.post.imdb_link];
           }}
         />
       </Stack.Navigator>

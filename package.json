@@ -12,6 +12,7 @@
     "@react-native-masked-view/masked-view": "^0.2.3",
     "@react-navigation/native": "^5.9.3",
     "@react-navigation/stack": "5.14.3",
+    "axios": "^0.21.1",
     "d3-scale": "^3.2.3",
     "d3-shape": "^2.1.0",
     "expo": "~40.0.0",
