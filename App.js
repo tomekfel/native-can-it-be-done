@@ -9,7 +9,7 @@ import FlatListAnimated from './src/FlatListAnimated';
 export default function App() {
   return (
     <View style={styles.container}>
-      <FlatListAnimated />
+      <RevolutCharts />
       <StatusBar style='auto' />
     </View>
   );

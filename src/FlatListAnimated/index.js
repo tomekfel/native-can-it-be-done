@@ -41,7 +41,7 @@ const FlatListAnimated = () => {
 
   const getPosts = async () => {
     const { data } = await axios.get(
-      `https://beatporttopcharts.com/php/api/movie/search.php?s=&l=1&c=7&rating_count=1,MAX`
+      `https://beatporttopcharts.com/php/api/movie/search.php?s=&l=1&c=14&rating_count=1000,MAX`
     );
     setPosts(data.records);
   };
