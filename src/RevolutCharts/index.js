@@ -32,18 +32,23 @@ const data = [
   { x: new Date(2018, 10, 2), y: 300 },
   { x: new Date(2018, 10, 5), y: 300 },
 ];
+
 const scaleX = scaleTime()
   .domain([new Date(2018, 9, 1), new Date(2018, 10, 5)])
   .range([0, width]);
 const scaleY = scaleLinear()
   .domain([0, 300])
   .range([height - verticalPadding, verticalPadding]);
+
 const scaleLabel = scaleQuantile().domain([0, 300]).range([0, 200, 300]);
+
 const line = d3.shape
   .line()
   .x((d) => scaleX(d.x))
   .y((d) => scaleY(d.y))
   .curve(d3.shape.curveBasis)(data);
+
+console.log(line);
 
 const properties = svgPath.svgPathProperties(line);
 const lineLength = properties.getTotalLength();

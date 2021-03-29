@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\p10474302\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install
+  C:\Program Files\nodejs\node.exe C:\Users\p10474302\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add expo-app-loading
 
 PATH: 
   C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\p10474302\bin;C:\ProgramData\Oracle\Java\javapath;C:\oracle\OraHome_1\bin;C:\oracle\OraHome_1\jre\1.4.2\bin\client;C:\oracle\OraHome_1\jre\1.4.2\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files (x86)\PuTTY;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs;C:\Users\p10474302\AppData\Local\Microsoft\WindowsApps;C:\Users\p10474302\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\p10474302\AppData\Roaming\npm;C:\Users\p10474302\flutter_windows_2.0.3-stable\flutter\bin;C:\Users\p10474302\AppData\Local\Android\Sdk\platform-tools
@@ -14,12 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  SyntaxError: C:\Users\p10474302\native\CanItBeDone\package.json: Unexpected token } in JSON at position 1113
-      at JSON.parse (<anonymous>)
-      at C:\Users\p10474302\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (C:\Users\p10474302\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:310:30)
-      at C:\Users\p10474302\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:321:13
+  Error: EPERM: operation not permitted, unlink 'C:\Users\p10474302\native\CanItBeDone\node_modules\@babel\generator\node_modules\.bin'
 
 npm manifest: 
   {
@@ -36,28 +31,35 @@ npm manifest:
       "@react-native-masked-view/masked-view": "^0.2.3",
       "@react-navigation/native": "^5.9.3",
       "@react-navigation/stack": "5.14.3",
+      "axios": "^0.21.1",
       "d3-scale": "^3.2.3",
       "d3-shape": "^2.1.0",
       "expo": "~40.0.0",
       "expo-status-bar": "~1.0.3",
+      "faker": "^5.5.0",
       "react": "16.13.1",
       "react-dom": "16.13.1",
       "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
       "react-native-gesture-handler": "1.8.0",
       "react-native-reanimated": "1.13.0",
+      "react-native-redash": "^16.0.8",
       "react-native-safe-area-context": "^3.1.9",
-      "react-native-screens": "2.15.2",
+      "react-native-screens": "~2.2.0",
       "react-native-shared-element": "0.7.0",
       "react-native-svg": "^12.1.0",
       "react-native-web": "~0.13.12",
       "react-navigation": "4",
+      "react-navigation-shared-element": "^3.0.0",
       "svg-path-properties": "^1.0.11"
     },
     "dependenciesComments": {
-      "react-navigation-shared-element": "^2.3.1",
+      "react-navigation-shared-element": "^2.3.1"
     },
     "devDependencies": {
-      "@babel/core": "^7.9.0"
+      "@babel/core": "^7.9.0",
+      "@types/react": "~16.9.35",
+      "@types/react-native": "~0.63.2",
+      "typescript": "~4.0.0"
     },
     "private": true
   }
@@ -1906,6 +1908,40 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.35.tgz#42c953a4e2b18ab931f72477e7012172f4ffa313"
     integrity sha512-Lt+wj8NVPx0zUmUwumiVXapmaLUcAk3yPuHCFVXras9k5VT9TdhJqKqGVUQCD60OTMCl0qxJ57OiTL0Mic3Iag==
   
+  "@types/prop-types@*":
+    version "15.7.3"
+    resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.3.tgz#2ab0d5da2e5815f94b0b9d4b95d1e5f243ab2ca7"
+    integrity sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw==
+  
+  "@types/react-native@~0.63.2":
+    version "0.63.52"
+    resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.63.52.tgz#449beb4a413ec0f2c172cbf676a95f5b0952adf4"
+    integrity sha512-sBXvvtJaIUSXQLDh9NZitx1KHkKUdBLZy34lFKJaIXtpHIh5OEbBXeyUTFBtFwjk/RD0tneAtUqsdhheZRzAzw==
+    dependencies:
+      "@types/react" "*"
+  
+  "@types/react@*":
+    version "17.0.3"
+    resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.3.tgz#ba6e215368501ac3826951eef2904574c262cc79"
+    integrity sha512-wYOUxIgs2HZZ0ACNiIayItyluADNbONl7kt8lkLjVK8IitMH5QMyAh75Fwhmo37r1m7L2JaFj03sIfxBVDvRAg==
+    dependencies:
+      "@types/prop-types" "*"
+      "@types/scheduler" "*"
+      csstype "^3.0.2"
+  
+  "@types/react@~16.9.35":
+    version "16.9.56"
+    resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.56.tgz#ea25847b53c5bec064933095fc366b1462e2adf0"
+    integrity sha512-gIkl4J44G/qxbuC6r2Xh+D3CGZpJ+NdWTItAPmZbR5mUS+JQ8Zvzpl0ea5qT/ZT3ZNTUcDKUVqV3xBE8wv/DyQ==
+    dependencies:
+      "@types/prop-types" "*"
+      csstype "^3.0.2"
+  
+  "@types/scheduler@*":
+    version "0.16.1"
+    resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.1.tgz#18845205e86ff0038517aab7a18a62a6b9f71275"
+    integrity sha512-EaCxbanVeyxDRTQBkdLb3Bvl/HK7PBK6UJjsSixB0iHKoWxE5uu2Q/DgtpOhPIojN0Zl1whvOd7PoHs2P0s5eA==
+  
   "@types/stack-utils@^1.0.1":
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
@@ -1951,6 +1987,11 @@ Lockfile:
     integrity sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==
     dependencies:
       event-target-shim "^5.0.0"
+  
+  abs-svg-path@^0.1.1:
+    version "0.1.1"
+    resolved "https://registry.yarnpkg.com/abs-svg-path/-/abs-svg-path-0.1.1.tgz#df601c8e8d2ba10d4a76d625e236a9a39c2723bf"
+    integrity sha1-32Acjo0roQ1KdtYl4japo5wnI78=
   
   absolute-path@^0.0.0:
     version "0.0.0"
@@ -2172,6 +2213,13 @@ Lockfile:
     integrity sha512-XWX3OX8Onv97LMk/ftVyBibpGwY5a8SmuxZPzeOxqmuEqUCOM9ZE+uIaD1VNJ5QnvU2UQusvmKbuM1FR8QWGfQ==
     dependencies:
       array-filter "^1.0.0"
+  
+  axios@^0.21.1:
+    version "0.21.1"
+    resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
+    integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
+    dependencies:
+      follow-redirects "^1.10.0"
   
   babel-plugin-dynamic-import-node@^2.3.3:
     version "2.3.3"
@@ -2827,6 +2875,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/css-what/-/css-what-3.4.2.tgz#ea7026fcb01777edbde52124e21f327e7ae950e4"
     integrity sha512-ACUm3L0/jiZTqfzRM3Hi9Q8eZqd6IK37mMWPLz9PJxkLWllYeRf+EHUSHYEtFop2Eqytaq1FizFVh7XfBnXCDQ==
   
+  csstype@^3.0.2:
+    version "3.0.7"
+    resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.7.tgz#2a5fb75e1015e84dd15692f71e89a1450290950b"
+    integrity sha512-KxnUB0ZMlnUWCsx2Z8MUsr6qV6ja1w9ArPErJaJaF8a5SOWoHLIszeCTKGRGRgtLgYrs1E8CHkNSP1VZTTPc9g==
+  
   d3-array@^2.3.0:
     version "2.12.1"
     resolved "https://registry.yarnpkg.com/d3-array/-/d3-array-2.12.1.tgz#e20b41aafcdffdf5d50928004ececf815a465e81"
@@ -2890,6 +2943,11 @@ Lockfile:
     version "1.10.4"
     resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.10.4.tgz#8e544a9b8683f61783f570980a8a80eaf54ab1e2"
     integrity sha512-RI/Hh4kqRc1UKLOAf/T5zdMMX5DQIlDxwUe3wSyMMnEbGunnpENCdbUgM+dW7kXidZqCttBrmw7BhN4TMddkCw==
+  
+  debounce@^1.2.0:
+    version "1.2.1"
+    resolved "https://registry.yarnpkg.com/debounce/-/debounce-1.2.1.tgz#38881d8f4166a5c5848020c11827b834bcb3e0a5"
+    integrity sha512-XRRe6Glud4rd/ZGQfiV1ruXSfbvfJedlV9Y6zOlP+2K04vBYiJEte6stfFkCP03aMnY5tsipamumUjL14fofug==
   
   debug@2.6.9, debug@^2.2.0, debug@^2.3.3:
     version "2.6.9"
@@ -3418,6 +3476,11 @@ Lockfile:
       snapdragon "^0.8.1"
       to-regex "^3.0.1"
   
+  faker@^5.5.0:
+    version "5.5.0"
+    resolved "https://registry.yarnpkg.com/faker/-/faker-5.5.0.tgz#17922f6252cd44c732943c89c2f0f0c7e189ffe3"
+    integrity sha512-2pPfgmRCfMDRJy8koo5WSEXVHpRdYSs04Iis/kCamSg5nnXyknArW1t4phpJXy2/LIr0C7cys/+IiIQLLU/KCw==
+  
   fancy-log@^1.3.2:
     version "1.3.3"
     resolved "https://registry.yarnpkg.com/fancy-log/-/fancy-log-1.3.3.tgz#dbc19154f558690150a23953a0adbd035be45fc7"
@@ -3581,6 +3644,11 @@ Lockfile:
     dependencies:
       locate-path "^6.0.0"
       path-exists "^4.0.0"
+  
+  follow-redirects@^1.10.0:
+    version "1.13.3"
+    resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.3.tgz#e5598ad50174c1bc4e872301e82ac2cd97f90267"
+    integrity sha512-DUgl6+HDzB0iEptNQEXLx/KhTmDb8tZUHSeLqpnjpknR70H0nC2t9N73BK6fN4hOvJ84pKlIQVQ4k5FFlBedKA==
   
   fontfaceobserver@^2.1.0:
     version "2.1.0"
@@ -5044,6 +5112,13 @@ Lockfile:
     dependencies:
       remove-trailing-separator "^1.0.1"
   
+  normalize-svg-path@^1.0.1:
+    version "1.1.0"
+    resolved "https://registry.yarnpkg.com/normalize-svg-path/-/normalize-svg-path-1.1.0.tgz#0e614eca23c39f0cffe821d6be6cd17e569a766c"
+    integrity sha512-r9KHKG2UUeB5LoTouwDzBy2VxXlHsiM6fyLQvnJa0S5hrhzqElH/CH7TUGhT1fVvIYBIKf3OpY4YJ4CK+iaqHg==
+    dependencies:
+      svg-arc-to-cubic-bezier "^3.0.0"
+  
   npm-run-path@^2.0.0:
     version "2.0.2"
     resolved "https://registry.yarnpkg.com/npm-run-path/-/npm-run-path-2.0.2.tgz#35a9232dfa35d7067b4cb2ddf2357b1871536c5f"
@@ -5295,6 +5370,11 @@ Lockfile:
     integrity sha512-Nt/a5SfCLiTnQAjx3fHlqp8hRgTL3z7kTQZzvIMS9uCAepnCyjpdEc6M/sz69WqMBdaDBw9sF1F1UaHROYzGkQ==
     dependencies:
       pngjs "^3.3.0"
+  
+  parse-svg-path@^0.1.2:
+    version "0.1.2"
+    resolved "https://registry.yarnpkg.com/parse-svg-path/-/parse-svg-path-0.1.2.tgz#7a7ec0d1eb06fa5325c7d3e009b859a09b5d49eb"
+    integrity sha1-en7A0esG+lMlx9PgCbhZoJtdSes=
   
   parseurl@~1.3.3:
     version "1.3.3"
@@ -5574,6 +5654,15 @@ Lockfile:
     dependencies:
       fbjs "^1.0.0"
   
+  react-native-redash@^16.0.8:
+    version "16.0.8"
+    resolved "https://registry.yarnpkg.com/react-native-redash/-/react-native-redash-16.0.8.tgz#734b016f17dc747560891502b6c5db5e04a17850"
+    integrity sha512-2Opu4ls31HRGQnz11iq4cnJhCz0GnasnnZgihAlCsVFc9ofa9+47hbc1xo/WkN0OZ5X5KKo869soyfYQgIxy+w==
+    dependencies:
+      abs-svg-path "^0.1.1"
+      normalize-svg-path "^1.0.1"
+      parse-svg-path "^0.1.2"
+  
   react-native-safe-area-context@3.1.9:
     version "3.1.9"
     resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-3.1.9.tgz#48864ea976b0fa57142a2cc523e1fd3314e7247e"
@@ -5591,10 +5680,12 @@ Lockfile:
     dependencies:
       hoist-non-react-statics "^2.3.1"
   
-  react-native-screens@2.15.2:
-    version "2.15.2"
-    resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-2.15.2.tgz#a449700e895b462937211ec72ed6f09652758f06"
-    integrity sha512-CagNf2APXkVoRlF3Mugr264FbKbrBg9eXUkqhIPVeZB8EsdS8XPrnt99yj/pzmT+yJMBY0dGrjXT8+68WYh6YQ==
+  react-native-screens@~2.2.0:
+    version "2.2.0"
+    resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-2.2.0.tgz#cc4cdf17426fdda97ad93a5e812a1899390f1978"
+    integrity sha512-a0VzxOWot7F9B/GQyDSssBRd3jUJazFnTQS61IiyReWB6aHlFhf3Xz10jBRoURXy1EMCDCHgenmTVTkKHpKyqQ==
+    dependencies:
+      debounce "^1.2.0"
   
   react-native-shared-element@0.7.0:
     version "0.7.0"
@@ -5656,10 +5747,10 @@ Lockfile:
       use-subscription "^1.0.0"
       whatwg-fetch "^3.0.0"
   
-  react-navigation-shared-element@^2.3.1:
-    version "2.3.1"
-    resolved "https://registry.yarnpkg.com/react-navigation-shared-element/-/react-navigation-shared-element-2.3.1.tgz#35a3ac2f42a3e8c55e60609344443725c793a9b7"
-    integrity sha512-MA2xDn9urQkgAiAhGttCtaoTW6VaseYpCB7f1CmXaj9ROYojznWxlKZuT94riGFzuiFxDMMKWFgLM6JMUf6ELA==
+  react-navigation-shared-element@^3.0.0:
+    version "3.0.0"
+    resolved "https://registry.yarnpkg.com/react-navigation-shared-element/-/react-navigation-shared-element-3.0.0.tgz#3dfa6a71f138e4ceb457a91aea3ef2a8ab2a6a32"
+    integrity sha512-nSmbgf4+hKSZU1Rzi5Bm1Is5mt0Z+xY5sXeTx4t5KMnmNW4lz5M83p9oTW6mKDoXUeCocUfeVwbCmsAjlyTLQw==
     dependencies:
       hoist-non-react-statics "^3.3.2"
   
@@ -6311,6 +6402,11 @@ Lockfile:
     dependencies:
       has-flag "^4.0.0"
   
+  svg-arc-to-cubic-bezier@^3.0.0:
+    version "3.2.0"
+    resolved "https://registry.yarnpkg.com/svg-arc-to-cubic-bezier/-/svg-arc-to-cubic-bezier-3.2.0.tgz#390c450035ae1c4a0104d90650304c3bc814abe6"
+    integrity sha512-djbJ/vZKZO+gPoSDThGNpKDO+o+bAeA4XQKovvkNCqnIS2t+S4qnLAGQhyyrulhCFRl1WWzAp0wUDV8PpTVU3g==
+  
   svg-path-properties@^1.0.11:
     version "1.0.11"
     resolved "https://registry.yarnpkg.com/svg-path-properties/-/svg-path-properties-1.0.11.tgz#d804b77dea286ddd56bd182548b9c4f5980dcf83"
@@ -6437,6 +6533,11 @@ Lockfile:
     version "0.0.6"
     resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
     integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+  
+  typescript@~4.0.0:
+    version "4.0.7"
+    resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.0.7.tgz#7168032c43d2a2671c95c07812f69523c79590af"
+    integrity sha512-yi7M4y74SWvYbnazbn8/bmJmX4Zlej39ZOqwG/8dut/MYoSQ119GY9ZFbbGsD4PFZYWxqik/XsP3vk3+W5H3og==
   
   ua-parser-js@^0.7.18:
     version "0.7.25"
