@@ -12,3 +12,15 @@ Facebook Marketplace
 ---
 </br>
 <img src='./assets/gifs/facebook-marketplace.gif' width="300">
+
+---
+Flat List Animated
+---
+</br>
+<img src='./assets/gifs/flat-list-animated.gif' width="300">
+
+---
+Revolut Charts
+---
+</br>
+<img src='./assets/gifs/revolut-charts.gif' width="300">
