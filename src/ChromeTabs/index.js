@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   StyleSheet,
   Text,
@@ -8,18 +8,19 @@ import {
   StatusBar,
   Animated,
   Dimensions,
-} from 'react-native';
-import MaskedView from '@react-native-masked-view/masked-view';
+} from "react-native";
+// import MaskedView from "@react-native-masked-view/masked-view";
+import MaskedView from "@react-native-community/masked-view";
 
 import TabBar, {
   TABBAR_HEIGHT,
   TABBAR_WIDTH,
   TAB_WIDTH,
-} from './components/TapBar';
+} from "./components/TapBar";
 
-const { height } = Dimensions.get('window');
+const { height } = Dimensions.get("window");
 
-export default class App extends React.Component {
+export default class ChromeTabs extends React.Component {
   state = {
     x: new Animated.Value(0),
   };
@@ -29,18 +30,18 @@ export default class App extends React.Component {
     const translateX = x.interpolate({
       inputRange: [0, TABBAR_WIDTH],
       outputRange: [TABBAR_WIDTH - TAB_WIDTH, 0],
-      extrapolate: 'clamp',
+      extrapolate: "clamp",
     });
 
     return (
       <SafeAreaView style={styles.root}>
-        <StatusBar barStyle='light-content' />
+        <StatusBar barStyle="light-content" />
 
         <View style={styles.container}>
           <TabBar
-            color='#f8f9fa'
-            backgroundColor='#828384'
-            borderColor='#505152'
+            color="#f8f9fa"
+            backgroundColor="#828384"
+            borderColor="#505152"
           />
 
           <MaskedView
@@ -52,9 +53,9 @@ export default class App extends React.Component {
             }
           >
             <TabBar
-              color='#3b4043'
-              backgroundColor='#f8f9fa'
-              borderColor='#f8f9fa'
+              color="#3b4043"
+              backgroundColor="#f8f9fa"
+              borderColor="#f8f9fa"
             />
           </MaskedView>
           <Animated.ScrollView
@@ -85,22 +86,22 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    alignItems: 'center',
-    backgroundColor: '#212223',
+    alignItems: "center",
+    backgroundColor: "#212223",
     paddingTop: StatusBar.height || 40,
   },
   container: {
     width: TABBAR_WIDTH,
     // height: TABBAR_HEIGHT,
     height: height,
-    backgroundColor: 'red',
+    backgroundColor: "red",
   },
   cursor: {
     height: TABBAR_HEIGHT,
     width: TAB_WIDTH,
-    backgroundColor: '#f8f9fa',
+    backgroundColor: "#f8f9fa",
     borderRadius: 5,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

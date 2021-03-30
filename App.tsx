@@ -12,6 +12,12 @@ import Gestures from './src/Gestures';
 import SVGAnimations from './src/SVGAnimations';
 import HeartOfTheMatter from './src/HeartOfTheMatter';
 
+import ChromeTabs from './src/ChromeTabs'
+import FacebookMarketplace from './src/FacebookMarketplace'
+import FlatListAnimated from './src/FlatListAnimated'
+import RevolutCharts from './src/RevolutCharts'
+import Wallet from './src/Wallet'
+
 enableScreens();
 
 const fonts = {
@@ -74,6 +80,41 @@ const AppNavigator = () => (
       component={SVGAnimations}
       options={{
         title: 'SVG Animations',
+      }}
+    />
+    <Stack.Screen
+      name='ChromeTabs'
+      component={ChromeTabs}
+      options={{
+        title: 'Chrome Tabs',
+      }}
+    />
+    <Stack.Screen
+      name='FacebookMarketplace'
+      component={FacebookMarketplace}
+      options={{
+        title: 'Facebook Marketplace',
+      }}
+    />
+    <Stack.Screen
+      name='FlatListAnimated'
+      component={FlatListAnimated}
+      options={{
+        title: 'FlatList Animated',
+      }}
+    />
+    <Stack.Screen
+      name='RevolutCharts'
+      component={RevolutCharts}
+      options={{
+        title: 'Revolut Charts',
+      }}
+    />
+    <Stack.Screen
+      name='Wallet'
+      component={Wallet}
+      options={{
+        title: 'Wallet',
       }}
     />
   </Stack.Navigator>

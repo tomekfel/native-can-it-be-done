@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   StyleSheet,
   View,
@@ -7,19 +7,19 @@ import {
   Animated,
   TextInput,
   Text,
-} from 'react-native';
+} from "react-native";
 
-import Svg, { Path, Defs, LinearGradient, Stop } from 'react-native-svg';
-import * as shape from 'd3-shape';
-import { scaleTime, scaleLinear, scaleQuantile, scaleSymlog } from 'd3-scale';
-import * as svgPath from 'svg-path-properties';
+import Svg, { Path, Defs, LinearGradient, Stop } from "react-native-svg";
+import * as shape from "d3-shape";
+import { scaleTime, scaleLinear, scaleQuantile, scaleSymlog } from "d3-scale";
+import * as svgPath from "svg-path-properties";
 
 const d3 = {
   shape,
 };
 
 const height = 200;
-const { width } = Dimensions.get('window');
+const { width } = Dimensions.get("window");
 const verticalPadding = 5;
 const cursorRadius = 10;
 const labelWidth = 100;
@@ -48,7 +48,7 @@ const line = d3.shape
   .y((d) => scaleY(d.y))
   .curve(d3.shape.curveBasis)(data);
 
-console.log(line);
+// console.log(line);
 
 const properties = svgPath.svgPathProperties(line);
 const lineLength = properties.getTotalLength();
@@ -81,7 +81,7 @@ export default class App extends React.Component {
     const translateX = x.interpolate({
       inputRange: [0, lineLength],
       outputRange: [width - labelWidth, 0],
-      extrapolate: 'clamp',
+      extrapolate: "clamp",
     });
     return (
       <SafeAreaView style={styles.root}>
@@ -89,21 +89,21 @@ export default class App extends React.Component {
           <Text>Revolut</Text>
           <Svg {...{ width, height }}>
             <Defs>
-              <LinearGradient x1='50%' y1='0%' x2='50%' y2='100%' id='gradient'>
-                <Stop stopColor='#CDE3F8' offset='0%' />
-                <Stop stopColor='#eef6fd' offset='80%' />
-                <Stop stopColor='#FEFFFF' offset='100%' />
+              <LinearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="gradient">
+                <Stop stopColor="#CDE3F8" offset="0%" />
+                <Stop stopColor="#eef6fd" offset="80%" />
+                <Stop stopColor="#FEFFFF" offset="100%" />
               </LinearGradient>
             </Defs>
             <Path
               d={line}
-              fill='transparent'
-              stroke='#367be2'
+              fill="transparent"
+              stroke="#367be2"
               strokeWidth={5}
             />
             <Path
               d={`${line} L ${width} ${height} L 0 ${height}`}
-              fill='url(#gradient)'
+              fill="url(#gradient)"
             />
             <View ref={this.cursor} style={styles.cursor} />
           </Svg>
@@ -149,15 +149,15 @@ const styles = StyleSheet.create({
     width: cursorRadius * 2,
     height: cursorRadius * 2,
     borderRadius: cursorRadius,
-    borderColor: '#367be2',
+    borderColor: "#367be2",
     borderWidth: 3,
-    backgroundColor: 'white',
+    backgroundColor: "white",
   },
   label: {
-    position: 'absolute',
+    position: "absolute",
     top: -45,
     left: 0,
-    backgroundColor: 'lightgray',
+    backgroundColor: "lightgray",
     width: labelWidth,
   },
 });

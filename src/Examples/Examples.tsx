@@ -32,6 +32,31 @@ const examples = [
     title: "SVG Animations",
     source: require("../../assets/examples/svg-animations.png"),
   },
+  {
+    screen: "ChromeTabs",
+    title: "Chrome Tabs",
+    source: require("../../assets/examples/chrome-tabs.png"),
+  },
+  {
+    screen: "FacebookMarketplace",
+    title: "Facebook Marketplace",
+    source: require("../../assets/examples/facebook-marketplace.png"),
+  },
+  {
+    screen: "FlatListAnimated",
+    title: "FlatList Animated",
+    source: require("../../assets/examples/flat-list-animated.png"),
+  },
+  {
+    screen: "RevolutCharts",
+    title: "Revolut Charts",
+    source: require("../../assets/examples/revolut-charts.png"),
+  },
+  {
+    screen: "Wallet",
+    title: "Wallet",
+    source: require("../../assets/examples/wallet.png"),
+  },
 ] as const;
 
 export const assets = examples.map(({ source }) => source);
