@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import {
   StatusBar,
   FlatList,
@@ -12,10 +12,10 @@ import {
   Easing,
   SafeAreaViewBase,
   SafeAreaView,
-} from 'react-native';
-const { width, height } = Dimensions.get('screen');
+} from "react-native";
+const { width, height } = Dimensions.get("screen");
 // import faker from 'faker';
-import axios from 'axios';
+import axios from "axios";
 
 // faker.seed(10);
 
@@ -41,7 +41,7 @@ const FlatListAnimated = () => {
 
   const getPosts = async () => {
     const { data } = await axios.get(
-      `https://beatporttopcharts.com/php/api/movie/search.php?s=&l=1&c=14&rating_count=1000,MAX`
+      `https://beatporttopcharts.com/php/api/movie/search.php?s=&l=1&c=14&rating_count=1,MAX`
     );
     setPosts(data.records);
   };
@@ -52,11 +52,11 @@ const FlatListAnimated = () => {
 
   scrollY = React.useRef(new Animated.Value(0)).current;
   return (
-    <View style={{ flex: 1, backgroundColor: '#fff' }}>
+    <View style={{ flex: 1, backgroundColor: "#fff" }}>
       <Image
         source={{
           uri:
-            'https://images.pexels.com/photos/1231265/pexels-photo-1231265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+            "https://images.pexels.com/photos/1231265/pexels-photo-1231265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         }}
         style={StyleSheet.absoluteFillObject}
         blurRadius={80}
@@ -100,10 +100,10 @@ const FlatListAnimated = () => {
           return (
             <Animated.View
               style={{
-                flexDirection: 'row',
+                flexDirection: "row",
                 padding: SPACING,
                 marginBottom: SPACING,
-                backgroundColor: 'rgba(255,255,255,0.9)',
+                backgroundColor: "rgba(255,255,255,0.9)",
                 borderRadius: 12,
                 opacity,
                 transform: [{ scale }],
@@ -124,14 +124,14 @@ const FlatListAnimated = () => {
               />
               <View>
                 <Text
-                  style={{ fontSize: 20, fontWeight: '700', maxWidth: 200 }}
+                  style={{ fontSize: 20, fontWeight: "700", maxWidth: 200 }}
                 >
                   {item.imdb_title}
                 </Text>
                 <Text style={{ fontSize: 18, opacity: 0.7 }}>
                   {item.imdb_user_rating}
                 </Text>
-                <Text style={{ fontSize: 14, opacity: 0.8, color: '#0099cc' }}>
+                <Text style={{ fontSize: 14, opacity: 0.8, color: "#0099cc" }}>
                   {item.imdb_duration}
                 </Text>
               </View>
